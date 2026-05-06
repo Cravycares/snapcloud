@@ -93,11 +93,11 @@
       <div class="rate-row">
         <label>Your rating:</label>
         <div class="rate-stars" id="rate-stars">
-          ${[1,2,3,4,5].map(i => `
-            <svg class="rate-star" data-v="${i}" viewBox="0 0 20 20" onclick="setRating(${i})" onmouseover="hoverRating(${i})" onmouseout="resetRatingHover()">
-              <path d="M10 1l2.39 4.84 5.34.78-3.86 3.77.91 5.32L10 13.27l-4.78 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/>
-            </svg>`).join('')}
-        </div>
+          <span class="rate-star" data-v="1" onclick="setRating(1)" style="font-size:24px;cursor:pointer;">★</span>
+<span class="rate-star" data-v="2" onclick="setRating(2)" style="font-size:24px;cursor:pointer;">★</span>
+<span class="rate-star" data-v="3" onclick="setRating(3)" style="font-size:24px;cursor:pointer;">★</span>
+<span class="rate-star" data-v="4" onclick="setRating(4)" style="font-size:24px;cursor:pointer;">★</span>
+<span class="rate-star" data-v="5" onclick="setRating(5)" style="font-size:24px;cursor:pointer;">★</span>
         <span id="rate-label" style="font-size:12px;color:#a8a79f"></span>
       </div>
 
