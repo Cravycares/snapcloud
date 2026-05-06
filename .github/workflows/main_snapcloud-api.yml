@@ -33,14 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: |
-            .
-            !antenv/
-            !LogFiles/
-            !deployments/
-            !logs.zip
-            !fullapp.zip
-            !backend-only.zip
+          path: backend/
 
   deploy:
     runs-on: ubuntu-latest
