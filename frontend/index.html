@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnapCloud — Sign in</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .auth-brand-tagline { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 6px; }
+    .auth-brand { font-family: 'Playfair Display', serif; font-size: 32px; color: #fff; }
+    .auth-brand span { color: #e94560; }
+    .auth-side {
+      display: none;
+      flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 40px;
+    }
+    @media(min-width:800px){
+      .auth-wrap { display: flex; gap: 60px; align-items: center; }
+      .auth-side { display: flex; }
+      .auth-card { flex-shrink: 0; }
+    }
+    .feature-list { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+    .feature-list li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.75); }
+    .feature-dot { width: 6px; height: 6px; border-radius: 50%; background: #e94560; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-wrap">
+    <div class="auth-side">
+      <div class="auth-brand">snap<span>cloud</span></div>
+      <div class="auth-brand-tagline">A photo-sharing platform built on Azure</div>
+      <ul class="feature-list">
+        <li><span class="feature-dot"></span>Upload &amp; share photos with rich metadata</li>
+        <li><span class="feature-dot"></span>Discover photos from creators worldwide</li>
+        <li><span class="feature-dot"></span>Rate, comment, and engage with content</li>
+        <li><span class="feature-dot"></span>AI-powered auto-tagging via Azure Cognitive Services</li>
+        <li><span class="feature-dot"></span>Scalable cloud-native architecture on Azure</li>
+      </ul>
+    </div>
+
+    <div class="auth-card card">
+      <div class="auth-header">
+        <div style="font-family:'Playfair Display',serif;font-size:22px;color:#1a1a2e">snap<span style="color:#e94560">cloud</span></div>
+        <div style="font-size:13px;color:#a8a79f;margin-top:4px">Sign in to your account</div>
+      </div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" onclick="showTab('login')">Sign in</button>
+        <button class="auth-tab" onclick="showTab('register')">Create account</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="auth-panel active" id="panel-login">
+        <div class="alert alert-error" id="login-error"></div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" id="login-email" class="form-control" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" id="login-password" class="form-control" placeholder="••••••••" autocomplete="current-password">
+        </div>
+        <button class="btn btn-primary btn-full" id="login-btn" onclick="doLogin()">Sign in</button>
+        <div style="margin-top:14px;padding:12px;background:#f9f9f9;border-radius:8px;font-size:12px;color:#6b6a65">
+          <strong>Demo accounts:</strong><br>
+          Creator: creator@demo.com / demo1234<br>
+          Consumer: consumer@demo.com / demo1234
+        </div>
+      </div>
+
+      <!-- REGISTER -->
+      <div class="auth-panel" id="panel-register">
+        <div class="alert alert-error" id="reg-error"></div>
+        <div class="alert alert-success" id="reg-success"></div>
+        <div class="form-group">
+          <label class="form-label">Full name</label>
+          <input type="text" id="reg-name" class="form-control" placeholder="Alex Johnson">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" id="reg-email" class="form-control" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" id="reg-password" class="form-control" placeholder="Min. 8 characters">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Account type</label>
+          <select id="reg-role" class="form-control">
+            <option value="consumer">Consumer — browse &amp; comment</option>
+          </select>
+          <div class="form-hint">Creator accounts are set up by an admin.</div>
+        </div>
+        <button class="btn btn-primary btn-full" id="reg-btn" onclick="doRegister()">Create account</button>
+      </div>
+
+      <div class="auth-footer">
+        By signing in you agree to SnapCloud's terms of service.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  if (Auth.isLoggedIn()) {
+    window.location.href = Auth.isCreator() ? 'creator.html' : 'consumer.html';
+  }
+
+  function showTab(tab) {
+    document.querySelectorAll('.auth-tab').forEach((t, i) => t.classList.toggle('active', (i === 0) === (tab === 'login')));
+    document.getElementById('panel-login').classList.toggle('active', tab === 'login');
+    document.getElementById('panel-register').classList.toggle('active', tab === 'register');
+  }
+
+  async function doLogin() {
+    const btn = document.getElementById('login-btn');
+    const errEl = document.getElementById('login-error');
+    errEl.classList.remove('show');
+    btn.disabled = true; btn.textContent = 'Signing in…';
+    try {
+      const data = await apiFetch('/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({ email: document.getElementById('login-email').value, password: document.getElementById('login-password').value })
+      });
+      Auth.save(data.token, data.user);
+      window.location.href = data.user.role === 'creator' ? 'creator.html' : 'consumer.html';
+    } catch (err) {
+      errEl.textContent = err.message; errEl.classList.add('show');
+    } finally { btn.disabled = false; btn.textContent = 'Sign in'; }
+  }
+
+  async function doRegister() {
+    const btn = document.getElementById('reg-btn');
+    const errEl = document.getElementById('reg-error');
+    const okEl = document.getElementById('reg-success');
+    errEl.classList.remove('show'); okEl.classList.remove('show');
+    btn.disabled = true; btn.textContent = 'Creating account…';
+    try {
+      await apiFetch('/auth/register', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: document.getElementById('reg-name').value,
+          email: document.getElementById('reg-email').value,
+          password: document.getElementById('reg-password').value,
+          role: document.getElementById('reg-role').value
+        })
+      });
+      okEl.textContent = 'Account created! You can now sign in.'; okEl.classList.add('show');
+      showTab('login');
+    } catch (err) {
+      errEl.textContent = err.message; errEl.classList.add('show');
+    } finally { btn.disabled = false; btn.textContent = 'Create account'; }
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Enter') { if (document.getElementById('panel-login').classList.contains('active')) doLogin(); else doRegister(); } });
+</script>
+</body>
+</html>

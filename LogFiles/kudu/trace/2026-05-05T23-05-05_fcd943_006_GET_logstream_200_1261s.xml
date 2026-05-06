@@ -1,0 +1,5 @@
+<step title="Incoming Request" date="2026-05-05T23:05:05.324" instance="fcd943" url="/logstream" method="GET" type="request" pid="832,1,29" Host="snapcloud-api-gndhbycwg5gdh3e8.scm.germanywestcentral-01.azurewebsites.net" User-Agent="AZURECLI/2.79.0" Accept-Encoding="identity" Authorization="Bea..." x-ms-client-request-id="d72f7062-48d6-11f1-b777-8c8590972c71" X-ARR-LOG-ID="d72f7062-48d6-11f1-b777-8c8590972c71" CLIENT-IP="80.46.81.208:63805" X-SITE-DEPLOYMENT-ID="snapcloud-api" WAS-DEFAULT-HOSTNAME="snapcloud-api-gndhbycwg5gdh3e8.scm.germanywestcentral-01.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.2" X-WAWS-Unencoded-URL="/logstream" X-Client-IP="80.46.81.208" X-Client-Port="63805" >
+  <step title="LogStreamHandlerMiddleware.Invoke" date="2026-05-05T23:05:05.349" /><!-- duration: 550ms -->
+  <step title="Error occurred" date="2026-05-05T23:26:05.920" type="error" text="LogStreamManager: ProcessRequest end" /><!-- duration: 4ms -->
+  <step title="Outgoing response" date="2026-05-05T23:26:05.932" type="response" statusCode="200" statusText="OK" /><!-- duration: 3ms -->
+</step><!-- duration: 1260614ms -->

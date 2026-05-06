@@ -1,0 +1,275 @@
+2026-05-05T22:53:55.1508160Z State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-05-05T22:53:56.0486737Z State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-05-05T22:53:56.0499574Z Container start method called.
+2026-05-05T22:53:56.0532083Z State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.4:13209/appsvc/python:3.11_20260203.2.tuxprod for snapcloud-api., DetailsLevel: INFO
+2026-05-05T22:53:56.0536658Z Establishing network.
+2026-05-05T22:53:56.0543146Z Pulling image: appsvc/python:3.11_20260203.2.tuxprod.
+2026-05-05T22:54:09.9298081Z Image appsvc/python:3.11_20260203.2.tuxprod is pulled from registry 10.1.0.4:13209
+2026-05-05T22:54:09.9300154Z Container is starting.
+2026-05-05T22:54:09.9384380Z State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for snapcloud-api., DetailsLevel: INFO
+2026-05-05T22:54:09.9386156Z Establishing user namespace if not established already.
+2026-05-05T22:54:09.9387589Z Establishing network if not established already.
+2026-05-05T22:54:09.9388796Z Mounting volumes.
+2026-05-05T22:54:09.9395396Z Nested mountpoint 
+2026-05-05T22:54:09.9435911Z Nested mountpoint volatile/logs
+2026-05-05T22:54:09.9506545Z Nested mountpoint 
+2026-05-05T22:54:09.9975036Z Nested mountpoint 
+2026-05-05T22:54:09.9987436Z Nested mountpoint 
+2026-05-05T22:54:10.0690331Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for snapcloud-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-05-05T22:54:10.0697496Z Creating container.
+2026-05-05T22:54:10.0698886Z Creating pipes for streaming container io.
+2026-05-05T22:54:10.0701629Z Creating stdout named pipe at /podr/container/pipe/3e5042ef3040_snapcloud-api/stdout_3faf5ed6d8ce48da9b9899daf6c05b72.
+2026-05-05T22:54:10.0757762Z Successfully created stdout named pipe at: /podr/container/pipe/3e5042ef3040_snapcloud-api/stdout_3faf5ed6d8ce48da9b9899daf6c05b72.
+2026-05-05T22:54:10.0764379Z Opening named pipe /podr/container/pipe/3e5042ef3040_snapcloud-api/stdout_3faf5ed6d8ce48da9b9899daf6c05b72 for reading in non-blocking mode.
+2026-05-05T22:54:10.0766099Z Successfully opened named pipe: /podr/container/pipe/3e5042ef3040_snapcloud-api/stdout_3faf5ed6d8ce48da9b9899daf6c05b72.
+2026-05-05T22:54:10.0768714Z Successfully removed non-blocking flag from /podr/container/pipe/3e5042ef3040_snapcloud-api/stdout_3faf5ed6d8ce48da9b9899daf6c05b72.
+2026-05-05T22:54:10.0771413Z Creating stderr named pipe at /podr/container/pipe/3e5042ef3040_snapcloud-api/stderr_c8698e3237fe43db85b2c5d4a74c81de.
+2026-05-05T22:54:10.0773602Z Successfully created stderr named pipe at: /podr/container/pipe/3e5042ef3040_snapcloud-api/stderr_c8698e3237fe43db85b2c5d4a74c81de.
+2026-05-05T22:54:10.0775059Z Opening named pipe /podr/container/pipe/3e5042ef3040_snapcloud-api/stderr_c8698e3237fe43db85b2c5d4a74c81de for reading in non-blocking mode.
+2026-05-05T22:54:10.0777227Z Successfully opened named pipe: /podr/container/pipe/3e5042ef3040_snapcloud-api/stderr_c8698e3237fe43db85b2c5d4a74c81de.
+2026-05-05T22:54:10.0778565Z Successfully removed non-blocking flag from /podr/container/pipe/3e5042ef3040_snapcloud-api/stderr_c8698e3237fe43db85b2c5d4a74c81de.
+2026-05-05T22:54:10.0780613Z Creating container with image: appsvc/python:3.11_20260203.2.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/python:3.11_20260203.2.tuxprod
+2026-05-05T22:54:10.3938970Z Starting container: 3e5042ef3040_snapcloud-api.
+2026-05-05T22:54:10.4182241Z Starting watchers and probes.
+2026-05-05T22:54:10.4204584Z Starting metrics collection.
+2026-05-05T22:54:10.4206391Z Container is running.
+2026-05-05T22:54:10.4207156Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T22:54:10.4771955Z Container start method finished after 14427 ms.
+2026-05-05T22:54:10.4795275Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T22:54:10.4854149Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-05-05T22:54:24.5238549Z Site startup probe succeeded after 14.0258179 seconds.
+2026-05-05T22:54:24.5938191Z State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 14.0258179 seconds., DetailsLevel: INFO
+2026-05-05T22:54:24.7407787Z Site is running with deployment version: 69db4912-7d0f-40df-aa6b-1da1cb625c97
+2026-05-05T22:54:24.7412171Z Site started.
+2026-05-05T22:54:24.7413156Z State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 05/05/2026 22:54:24 (UTC), DetailsLevel: INFO
+2026-05-05T22:54:24.7487160Z Site is running with patch version PYTHON 3.11.14
+2026-05-05T23:25:38.6472525Z State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-05-05T23:25:39.6807693Z State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-05-05T23:25:39.6809513Z Container start method called.
+2026-05-05T23:25:39.6842960Z State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.4:13209/appsvc/python:3.11_20260203.2.tuxprod for snapcloud-api., DetailsLevel: INFO
+2026-05-05T23:25:39.6850315Z Establishing network.
+2026-05-05T23:25:39.6855728Z Pulling image: appsvc/python:3.11_20260203.2.tuxprod.
+2026-05-05T23:25:39.9422678Z Container is starting.
+2026-05-05T23:25:39.9423441Z State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for snapcloud-api., DetailsLevel: INFO
+2026-05-05T23:25:39.9424830Z Establishing user namespace if not established already.
+2026-05-05T23:25:39.9426368Z Establishing network if not established already.
+2026-05-05T23:25:39.9428012Z Mounting volumes.
+2026-05-05T23:25:39.9519200Z Nested mountpoint 
+2026-05-05T23:25:39.9557541Z Nested mountpoint volatile/logs
+2026-05-05T23:25:39.9779839Z Nested mountpoint 
+2026-05-05T23:25:40.0467968Z Nested mountpoint 
+2026-05-05T23:25:40.0479267Z Nested mountpoint 
+2026-05-05T23:25:40.1748043Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for snapcloud-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-05-05T23:25:40.1780579Z Creating container.
+2026-05-05T23:25:40.1784634Z Creating pipes for streaming container io.
+2026-05-05T23:25:40.1786379Z Creating stdout named pipe at /podr/container/pipe/fdbd21366056_snapcloud-api/stdout_d45dae571d924b2cb99ac737974c0f7e.
+2026-05-05T23:25:40.1788912Z Successfully created stdout named pipe at: /podr/container/pipe/fdbd21366056_snapcloud-api/stdout_d45dae571d924b2cb99ac737974c0f7e.
+2026-05-05T23:25:40.1803963Z Opening named pipe /podr/container/pipe/fdbd21366056_snapcloud-api/stdout_d45dae571d924b2cb99ac737974c0f7e for reading in non-blocking mode.
+2026-05-05T23:25:40.1809865Z Successfully opened named pipe: /podr/container/pipe/fdbd21366056_snapcloud-api/stdout_d45dae571d924b2cb99ac737974c0f7e.
+2026-05-05T23:25:40.1817087Z Successfully removed non-blocking flag from /podr/container/pipe/fdbd21366056_snapcloud-api/stdout_d45dae571d924b2cb99ac737974c0f7e.
+2026-05-05T23:25:40.1822449Z Creating stderr named pipe at /podr/container/pipe/fdbd21366056_snapcloud-api/stderr_25cbf3e8307a49388b38063a09587948.
+2026-05-05T23:25:40.1830652Z Successfully created stderr named pipe at: /podr/container/pipe/fdbd21366056_snapcloud-api/stderr_25cbf3e8307a49388b38063a09587948.
+2026-05-05T23:25:40.1832301Z Opening named pipe /podr/container/pipe/fdbd21366056_snapcloud-api/stderr_25cbf3e8307a49388b38063a09587948 for reading in non-blocking mode.
+2026-05-05T23:25:40.1834228Z Successfully opened named pipe: /podr/container/pipe/fdbd21366056_snapcloud-api/stderr_25cbf3e8307a49388b38063a09587948.
+2026-05-05T23:25:40.1836635Z Successfully removed non-blocking flag from /podr/container/pipe/fdbd21366056_snapcloud-api/stderr_25cbf3e8307a49388b38063a09587948.
+2026-05-05T23:25:40.1838656Z Creating container with image: appsvc/python:3.11_20260203.2.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/python:3.11_20260203.2.tuxprod
+2026-05-05T23:25:40.7122057Z Starting container: fdbd21366056_snapcloud-api.
+2026-05-05T23:25:40.8023553Z Starting watchers and probes.
+2026-05-05T23:25:40.8028560Z Starting metrics collection.
+2026-05-05T23:25:40.8048297Z Container is running.
+2026-05-05T23:25:40.8274518Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T23:25:40.8935753Z Container start method finished after 1212 ms.
+2026-05-05T23:25:40.8937823Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T23:25:40.8938139Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-05-05T23:25:51.0343782Z Container has finished running with exit code: 3.
+2026-05-05T23:25:51.0345848Z Container is terminating. Grace period: 5 seconds.
+2026-05-05T23:25:51.0373525Z Stop and delete container. Retry count = 0
+2026-05-05T23:25:51.0381307Z Stopping container: fdbd21366056_snapcloud-api.
+2026-05-05T23:25:51.0941835Z Deleting container: fdbd21366056_snapcloud-api. Retry count = 0
+2026-05-05T23:25:51.2124230Z Container spec TerminationMessagePolicy  path 
+2026-05-05T23:25:51.2134304Z Container is terminated. Total time elapsed: 178 ms.
+2026-05-05T23:25:51.2135688Z Site container: snapcloud-api terminated during site startup.
+2026-05-05T23:25:51.2209594Z State: Stopping, Action: CancellingStartup, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:25:51.2698439Z Site startup probe failed after 10.3754224 seconds.
+2026-05-05T23:25:51.3525222Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:25:51.3595987Z Failed to start site. Revert by stopping site.
+2026-05-05T23:25:51.3603723Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:25:51.3664739Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:25:51.3670659Z Site: snapcloud-api stopped.
+2026-05-05T23:26:11.7965331Z State: Stopping, Action: StoppingSite, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 05/05/2026 22:54:24 (UTC), DetailsLevel: INFO
+2026-05-05T23:26:11.8042245Z State: Stopping, Action: StoppingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 05/05/2026 22:54:24 (UTC), DetailsLevel: INFO
+2026-05-05T23:26:11.8044414Z Container is terminating. Grace period: 5 seconds.
+2026-05-05T23:26:11.8123241Z Stop and delete container. Retry count = 0
+2026-05-05T23:26:11.8124582Z Stopping container: 3e5042ef3040_snapcloud-api.
+2026-05-05T23:26:16.8702047Z Deleting container: 3e5042ef3040_snapcloud-api. Retry count = 0
+2026-05-05T23:26:17.2492911Z Container spec TerminationMessagePolicy  path 
+2026-05-05T23:26:17.2508321Z Container is terminated. Total time elapsed: 5444 ms.
+2026-05-05T23:26:17.2510097Z Site: snapcloud-api stopped.
+2026-05-05T23:25:51.3786805Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:25:51.5885578Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:25:51.7609441Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:25:51 (UTC), DetailsLevel: ERR
+2026-05-05T23:25:51.7666319Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:25:51 (UTC), DetailsLevel: ERR
+2026-05-05T23:26:17.4286373Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:25:51 (UTC), DetailsLevel: ERR
+2026-05-05T23:26:17.7512890Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:25:51 (UTC), DetailsLevel: ERR
+2026-05-05T23:26:17.7515024Z Container start method called.
+2026-05-05T23:26:17.7516064Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.4:13209/appsvc/python:3.11_20260203.2.tuxprod for snapcloud-api., DetailsLevel: INFO
+2026-05-05T23:26:17.7517492Z Establishing network.
+2026-05-05T23:26:17.7519198Z Pulling image: appsvc/python:3.11_20260203.2.tuxprod.
+2026-05-05T23:26:17.8769389Z Container is starting.
+2026-05-05T23:26:17.8770558Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for snapcloud-api., DetailsLevel: INFO
+2026-05-05T23:26:17.8772164Z Establishing user namespace if not established already.
+2026-05-05T23:26:17.8773750Z Establishing network if not established already.
+2026-05-05T23:26:17.8775749Z Mounting volumes.
+2026-05-05T23:26:17.8777913Z Nested mountpoint 
+2026-05-05T23:26:17.8807033Z Nested mountpoint volatile/logs
+2026-05-05T23:26:17.8877558Z Nested mountpoint 
+2026-05-05T23:26:17.8886021Z Nested mountpoint 
+2026-05-05T23:26:17.8912671Z Nested mountpoint 
+2026-05-05T23:26:17.9574705Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for snapcloud-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-05-05T23:26:17.9576172Z Creating container.
+2026-05-05T23:26:17.9577339Z Creating pipes for streaming container io.
+2026-05-05T23:26:17.9578557Z Creating stdout named pipe at /podr/container/pipe/7d4112f1d36b_snapcloud-api/stdout_31dffb0e7f1c486fb364dfc00cc353b6.
+2026-05-05T23:26:17.9581502Z Successfully created stdout named pipe at: /podr/container/pipe/7d4112f1d36b_snapcloud-api/stdout_31dffb0e7f1c486fb364dfc00cc353b6.
+2026-05-05T23:26:17.9582988Z Opening named pipe /podr/container/pipe/7d4112f1d36b_snapcloud-api/stdout_31dffb0e7f1c486fb364dfc00cc353b6 for reading in non-blocking mode.
+2026-05-05T23:26:17.9584397Z Successfully opened named pipe: /podr/container/pipe/7d4112f1d36b_snapcloud-api/stdout_31dffb0e7f1c486fb364dfc00cc353b6.
+2026-05-05T23:26:17.9585538Z Successfully removed non-blocking flag from /podr/container/pipe/7d4112f1d36b_snapcloud-api/stdout_31dffb0e7f1c486fb364dfc00cc353b6.
+2026-05-05T23:26:17.9608482Z Creating stderr named pipe at /podr/container/pipe/7d4112f1d36b_snapcloud-api/stderr_8bfaedaf29764daab21df8976d04fbb0.
+2026-05-05T23:26:17.9610160Z Successfully created stderr named pipe at: /podr/container/pipe/7d4112f1d36b_snapcloud-api/stderr_8bfaedaf29764daab21df8976d04fbb0.
+2026-05-05T23:26:17.9611299Z Opening named pipe /podr/container/pipe/7d4112f1d36b_snapcloud-api/stderr_8bfaedaf29764daab21df8976d04fbb0 for reading in non-blocking mode.
+2026-05-05T23:26:17.9612730Z Successfully opened named pipe: /podr/container/pipe/7d4112f1d36b_snapcloud-api/stderr_8bfaedaf29764daab21df8976d04fbb0.
+2026-05-05T23:26:17.9613978Z Successfully removed non-blocking flag from /podr/container/pipe/7d4112f1d36b_snapcloud-api/stderr_8bfaedaf29764daab21df8976d04fbb0.
+2026-05-05T23:26:17.9615542Z Creating container with image: appsvc/python:3.11_20260203.2.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/python:3.11_20260203.2.tuxprod
+2026-05-05T23:26:18.1468556Z Starting container: 7d4112f1d36b_snapcloud-api.
+2026-05-05T23:26:18.1634822Z Starting watchers and probes.
+2026-05-05T23:26:18.1655568Z Starting metrics collection.
+2026-05-05T23:26:18.1662540Z Container is running.
+2026-05-05T23:26:18.1663278Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T23:26:18.2438516Z Container start method finished after 492 ms.
+2026-05-05T23:26:18.2440436Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T23:26:18.2440689Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-05-05T23:26:24.0222687Z Container has finished running with exit code: 3.
+2026-05-05T23:26:24.0226292Z Container is terminating. Grace period: 5 seconds.
+2026-05-05T23:26:24.0238772Z Stop and delete container. Retry count = 0
+2026-05-05T23:26:24.0241757Z Stopping container: 7d4112f1d36b_snapcloud-api.
+2026-05-05T23:26:24.0468064Z Deleting container: 7d4112f1d36b_snapcloud-api. Retry count = 0
+2026-05-05T23:26:24.1086113Z Container spec TerminationMessagePolicy  path 
+2026-05-05T23:26:24.1087911Z Container is terminated. Total time elapsed: 85 ms.
+2026-05-05T23:26:24.1089293Z Site container: snapcloud-api terminated during site startup.
+2026-05-05T23:26:24.1090111Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:25:51, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:26:24.1196652Z Site startup probe failed after 5.8752008 seconds.
+2026-05-05T23:26:24.1657232Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:26:24.1668647Z Failed to start site. Revert by stopping site.
+2026-05-05T23:26:24.1674651Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:26:24.1678008Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:26:24.1678199Z Site: snapcloud-api stopped.
+2026-05-05T23:43:07.5257448Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:26:24 (UTC), DetailsLevel: WARN
+2026-05-05T23:43:07.7970745Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:26:24 (UTC), DetailsLevel: WARN
+2026-05-05T23:43:07.7972166Z Container start method called.
+2026-05-05T23:43:07.7972608Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.6:13209/appsvc/python:3.11_20260203.2.tuxprod for snapcloud-api., DetailsLevel: INFO
+2026-05-05T23:43:07.7973861Z Establishing network.
+2026-05-05T23:43:07.7975176Z Pulling image: appsvc/python:3.11_20260203.2.tuxprod.
+2026-05-05T23:43:08.0355029Z Image appsvc/python:3.11_20260203.2.tuxprod is pulled from registry 10.1.0.6:13209
+2026-05-05T23:43:08.0356794Z Container is starting.
+2026-05-05T23:43:08.0357678Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for snapcloud-api., DetailsLevel: INFO
+2026-05-05T23:43:08.0358880Z Establishing user namespace if not established already.
+2026-05-05T23:43:08.0360222Z Establishing network if not established already.
+2026-05-05T23:43:08.0362279Z Mounting volumes.
+2026-05-05T23:43:08.0383089Z Nested mountpoint 
+2026-05-05T23:43:08.0434083Z Nested mountpoint volatile/logs
+2026-05-05T23:43:08.0467323Z Nested mountpoint 
+2026-05-05T23:43:08.0483299Z Nested mountpoint 
+2026-05-05T23:43:08.0532802Z Nested mountpoint 
+2026-05-05T23:43:08.1610884Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for snapcloud-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-05-05T23:43:08.1612818Z Creating container.
+2026-05-05T23:43:08.1618787Z Creating pipes for streaming container io.
+2026-05-05T23:43:08.1620803Z Creating stdout named pipe at /podr/container/pipe/62687193b099_snapcloud-api/stdout_0fbc4a0d84424c5d968d16bb3c68f120.
+2026-05-05T23:43:08.1623751Z Successfully created stdout named pipe at: /podr/container/pipe/62687193b099_snapcloud-api/stdout_0fbc4a0d84424c5d968d16bb3c68f120.
+2026-05-05T23:43:08.1631676Z Opening named pipe /podr/container/pipe/62687193b099_snapcloud-api/stdout_0fbc4a0d84424c5d968d16bb3c68f120 for reading in non-blocking mode.
+2026-05-05T23:43:08.1634973Z Successfully opened named pipe: /podr/container/pipe/62687193b099_snapcloud-api/stdout_0fbc4a0d84424c5d968d16bb3c68f120.
+2026-05-05T23:43:08.1638635Z Successfully removed non-blocking flag from /podr/container/pipe/62687193b099_snapcloud-api/stdout_0fbc4a0d84424c5d968d16bb3c68f120.
+2026-05-05T23:43:08.1644125Z Creating stderr named pipe at /podr/container/pipe/62687193b099_snapcloud-api/stderr_200a5cd0360d40f8bdffca01b1e06f12.
+2026-05-05T23:43:08.1648542Z Successfully created stderr named pipe at: /podr/container/pipe/62687193b099_snapcloud-api/stderr_200a5cd0360d40f8bdffca01b1e06f12.
+2026-05-05T23:43:08.1649837Z Opening named pipe /podr/container/pipe/62687193b099_snapcloud-api/stderr_200a5cd0360d40f8bdffca01b1e06f12 for reading in non-blocking mode.
+2026-05-05T23:43:08.1651239Z Successfully opened named pipe: /podr/container/pipe/62687193b099_snapcloud-api/stderr_200a5cd0360d40f8bdffca01b1e06f12.
+2026-05-05T23:43:08.1652351Z Successfully removed non-blocking flag from /podr/container/pipe/62687193b099_snapcloud-api/stderr_200a5cd0360d40f8bdffca01b1e06f12.
+2026-05-05T23:43:08.1655830Z Creating container with image: appsvc/python:3.11_20260203.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20260203.2.tuxprod
+2026-05-05T23:43:08.4440161Z Starting container: 62687193b099_snapcloud-api.
+2026-05-05T23:43:08.4667835Z Starting watchers and probes.
+2026-05-05T23:43:08.4670684Z Starting metrics collection.
+2026-05-05T23:43:08.4672305Z Container is running.
+2026-05-05T23:43:08.4678034Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T23:43:08.5036252Z Container start method finished after 706 ms.
+2026-05-05T23:43:08.5039045Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T23:43:08.5039428Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-05-05T23:43:15.3242643Z Container has finished running with exit code: 1.
+2026-05-05T23:43:15.3247087Z Container is terminating. Grace period: 5 seconds.
+2026-05-05T23:43:15.3257732Z Stop and delete container. Retry count = 0
+2026-05-05T23:43:15.3260658Z Stopping container: 62687193b099_snapcloud-api.
+2026-05-05T23:43:15.3462124Z Deleting container: 62687193b099_snapcloud-api. Retry count = 0
+2026-05-05T23:43:15.4187983Z Container spec TerminationMessagePolicy  path 
+2026-05-05T23:43:15.4190585Z Container is terminated. Total time elapsed: 94 ms.
+2026-05-05T23:43:15.4192222Z Site container: snapcloud-api terminated during site startup.
+2026-05-05T23:43:15.4193024Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:26:24, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:43:15.4374803Z Site startup probe failed after 6.932494 seconds.
+2026-05-05T23:43:15.4954790Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:43:15.4969543Z Failed to start site. Revert by stopping site.
+2026-05-05T23:43:15.4970274Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:43:15.4972378Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:43:15.4972536Z Site: snapcloud-api stopped.
+2026-05-05T23:43:15.5018593Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:43:15.5970986Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:43:15.6650728Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:43:15 (UTC), DetailsLevel: ERR
+2026-05-05T23:43:15.7020841Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:43:15 (UTC), DetailsLevel: ERR
+2026-05-05T23:54:38.5845846Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:43:15 (UTC), DetailsLevel: ERR
+2026-05-05T23:54:39.2103958Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 05/05/2026 23:43:15 (UTC), DetailsLevel: ERR
+2026-05-05T23:54:39.2114376Z Container start method called.
+2026-05-05T23:54:39.2116659Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.6:13209/appsvc/python:3.11_20260203.2.tuxprod for snapcloud-api., DetailsLevel: INFO
+2026-05-05T23:54:39.2121374Z Establishing network.
+2026-05-05T23:54:39.2122965Z Pulling image: appsvc/python:3.11_20260203.2.tuxprod.
+2026-05-05T23:54:39.3625970Z Container is starting.
+2026-05-05T23:54:39.3627222Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for snapcloud-api., DetailsLevel: INFO
+2026-05-05T23:54:39.3628597Z Establishing user namespace if not established already.
+2026-05-05T23:54:39.3638634Z Establishing network if not established already.
+2026-05-05T23:54:39.3643391Z Mounting volumes.
+2026-05-05T23:54:39.3647204Z Nested mountpoint 
+2026-05-05T23:54:39.3720915Z Nested mountpoint volatile/logs
+2026-05-05T23:54:39.3786786Z Nested mountpoint 
+2026-05-05T23:54:39.3795302Z Nested mountpoint 
+2026-05-05T23:54:39.3837847Z Nested mountpoint 
+2026-05-05T23:54:39.4780586Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for snapcloud-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-05-05T23:54:39.4782221Z Creating container.
+2026-05-05T23:54:39.4783813Z Creating pipes for streaming container io.
+2026-05-05T23:54:39.4785513Z Creating stdout named pipe at /podr/container/pipe/91be5e169509_snapcloud-api/stdout_b76617b3446e452199a2791f1fff4e6b.
+2026-05-05T23:54:39.4797197Z Successfully created stdout named pipe at: /podr/container/pipe/91be5e169509_snapcloud-api/stdout_b76617b3446e452199a2791f1fff4e6b.
+2026-05-05T23:54:39.4798550Z Opening named pipe /podr/container/pipe/91be5e169509_snapcloud-api/stdout_b76617b3446e452199a2791f1fff4e6b for reading in non-blocking mode.
+2026-05-05T23:54:39.4801709Z Successfully opened named pipe: /podr/container/pipe/91be5e169509_snapcloud-api/stdout_b76617b3446e452199a2791f1fff4e6b.
+2026-05-05T23:54:39.4802994Z Successfully removed non-blocking flag from /podr/container/pipe/91be5e169509_snapcloud-api/stdout_b76617b3446e452199a2791f1fff4e6b.
+2026-05-05T23:54:39.4811065Z Creating stderr named pipe at /podr/container/pipe/91be5e169509_snapcloud-api/stderr_643a79e04c3e4f8596e1eb1c04e93984.
+2026-05-05T23:54:39.4814004Z Successfully created stderr named pipe at: /podr/container/pipe/91be5e169509_snapcloud-api/stderr_643a79e04c3e4f8596e1eb1c04e93984.
+2026-05-05T23:54:39.4815984Z Opening named pipe /podr/container/pipe/91be5e169509_snapcloud-api/stderr_643a79e04c3e4f8596e1eb1c04e93984 for reading in non-blocking mode.
+2026-05-05T23:54:39.4817545Z Successfully opened named pipe: /podr/container/pipe/91be5e169509_snapcloud-api/stderr_643a79e04c3e4f8596e1eb1c04e93984.
+2026-05-05T23:54:39.4818753Z Successfully removed non-blocking flag from /podr/container/pipe/91be5e169509_snapcloud-api/stderr_643a79e04c3e4f8596e1eb1c04e93984.
+2026-05-05T23:54:39.4820827Z Creating container with image: appsvc/python:3.11_20260203.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/python:3.11_20260203.2.tuxprod
+2026-05-05T23:54:39.7455072Z Starting container: 91be5e169509_snapcloud-api.
+2026-05-05T23:54:39.7700534Z Starting watchers and probes.
+2026-05-05T23:54:39.7704118Z Starting metrics collection.
+2026-05-05T23:54:39.7705871Z Container is running.
+2026-05-05T23:54:39.7706704Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T23:54:39.7910671Z Container start method finished after 579 ms.
+2026-05-05T23:54:39.7914370Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container snapcloud-api successfully created and is running., DetailsLevel: INFO
+2026-05-05T23:54:39.7914660Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-05-05T23:54:47.0477632Z Container has finished running with exit code: 1.
+2026-05-05T23:54:47.0479533Z Container is terminating. Grace period: 5 seconds.
+2026-05-05T23:54:47.0483704Z Stop and delete container. Retry count = 0
+2026-05-05T23:54:47.0485455Z Stopping container: 91be5e169509_snapcloud-api.
+2026-05-05T23:54:47.0730749Z Deleting container: 91be5e169509_snapcloud-api. Retry count = 0
+2026-05-05T23:54:47.1790642Z Container spec TerminationMessagePolicy  path 
+2026-05-05T23:54:47.1793228Z Container is terminated. Total time elapsed: 131 ms.
+2026-05-05T23:54:47.1794730Z Site container: snapcloud-api terminated during site startup.
+2026-05-05T23:54:47.1801479Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:43:15, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:54:47.2071462Z Site startup probe failed after 7.4151443 seconds.
+2026-05-05T23:54:47.2714324Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:54:47, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:54:47.2824394Z Failed to start site. Revert by stopping site.
+2026-05-05T23:54:47.2825498Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:54:47, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:54:47.2827824Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 05/05/2026 23:54:47, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: snapcloud-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-05-05T23:54:47.2827991Z Site: snapcloud-api stopped.
