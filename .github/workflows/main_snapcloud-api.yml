@@ -36,6 +36,11 @@ jobs:
           path: |
             .
             !antenv/
+            !LogFiles/
+            !deployments/
+            !logs.zip
+            !fullapp.zip
+            !backend-only.zip
 
   deploy:
     runs-on: ubuntu-latest
