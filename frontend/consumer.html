@@ -170,7 +170,7 @@
   async function openPhotoModal(id) {
     currentPhotoId = id; userRating = 0;
     resetRatingHover(); document.getElementById('comments-list').innerHTML = '<div class="spinner"></div>';
-    openModal('photo-modal');document.getElementById('rate-stars').innerHTML = [1,2,3,4,5].map(function(i){ return '<span class="rate-star" data-v="'+i+'" onclick="setRating('+i+')" style="font-size:24px;cursor:pointer;">★</span>'; }).join('');
+    openModal('photo-modal');document.getElementById('rate-stars').innerHTML = (function(i){ return '<span class="rate-star" data-v="'+i+'" onclick="setRating('+i+')" style="font-size:24px;cursor:pointer;">★</span>'; }).join('');
     try {
       const data = await apiFetch(`/photos/${id}`);
       const p = data.photo;
