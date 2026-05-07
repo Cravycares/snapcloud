@@ -45,7 +45,7 @@
     <!-- FEED -->
     <div>
       <div class="feed-grid" id="feed-grid">
-    <div class="feed-card" style="pointer-events:none"><div class="feed-card-img" style="background:#f1f0ea"></div><div class="feed-card-body"><div style="height:13px;background:#f1f0ea;border-radius:4px;margin-bottom:8px"></div><div style="height:24px;background:#f1f0ea;border-radius:4px;margin-bottom:10px"></div><div style="height:12px;background:#f1f0ea;border-radius:4px;width:60%"></div></div></div>`).join('')}
+        <div class="feed-card" style="pointer-events:none"><div class="feed-card-img" style="background:#f1f0ea"></div><div class="feed-card-body"><div style="height:13px;background:#f1f0ea;border-radius:4px;margin-bottom:8px"></div><div style="height:24px;background:#f1f0ea;border-radius:4px;margin-bottom:10px"></div><div style="height:12px;background:#f1f0ea;border-radius:4px;width:60%"></div></div></div>
       </div>
       <div class="load-more-wrap" id="load-more-wrap" style="display:none">
         <button class="btn btn-outline" onclick="loadMore()">Load more photos</button>
@@ -79,7 +79,7 @@
   <div class="modal-box">
     <div class="modal-img-wrap">
       <img id="modal-photo-img" src="" alt="">
-      <button class="modal-close" onclick="closeModal('photo-modal')">✕</button>
+      <button class="modal-close" onclick="closeModal('photo-modal')">&#x2715;</button>
     </div>
     <div class="modal-body">
       <div class="modal-title" id="modal-title"></div>
@@ -93,11 +93,12 @@
       <div class="rate-row">
         <label>Your rating:</label>
         <div class="rate-stars" id="rate-stars">
-          <span class="rate-star" data-v="1" onclick="setRating(1)" style="font-size:24px;cursor:pointer;">★</span>
-<span class="rate-star" data-v="2" onclick="setRating(2)" style="font-size:24px;cursor:pointer;">★</span>
-<span class="rate-star" data-v="3" onclick="setRating(3)" style="font-size:24px;cursor:pointer;">★</span>
-<span class="rate-star" data-v="4" onclick="setRating(4)" style="font-size:24px;cursor:pointer;">★</span>
-<span class="rate-star" data-v="5" onclick="setRating(5)" style="font-size:24px;cursor:pointer;">★</span>
+          <span class="rate-star" data-v="1" onclick="setRating(1)" onmouseover="hoverRating(1)" onmouseout="resetRatingHover()" style="font-size:24px;cursor:pointer;">&#9733;</span>
+          <span class="rate-star" data-v="2" onclick="setRating(2)" onmouseover="hoverRating(2)" onmouseout="resetRatingHover()" style="font-size:24px;cursor:pointer;">&#9733;</span>
+          <span class="rate-star" data-v="3" onclick="setRating(3)" onmouseover="hoverRating(3)" onmouseout="resetRatingHover()" style="font-size:24px;cursor:pointer;">&#9733;</span>
+          <span class="rate-star" data-v="4" onclick="setRating(4)" onmouseover="hoverRating(4)" onmouseout="resetRatingHover()" style="font-size:24px;cursor:pointer;">&#9733;</span>
+          <span class="rate-star" data-v="5" onclick="setRating(5)" onmouseover="hoverRating(5)" onmouseout="resetRatingHover()" style="font-size:24px;cursor:pointer;">&#9733;</span>
+        </div>
         <span id="rate-label" style="font-size:12px;color:#a8a79f"></span>
       </div>
 
@@ -136,7 +137,7 @@
       const data = await apiFetch('/photos?' + params);
       const grid = document.getElementById('feed-grid');
       const cards = (data.photos || []).map(renderFeedCard).join('');
-      if (reset) grid.innerHTML = cards || `<div class="empty-state" style="grid-column:1/-1"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><h3>No photos found</h3></div>`;
+      if (reset) grid.innerHTML = cards || '<div class="empty-state" style="grid-column:1/-1"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><h3>No photos found</h3></div>';
       else grid.insertAdjacentHTML('beforeend', cards);
       hasMore = data.has_more || false;
       document.getElementById('load-more-wrap').style.display = hasMore ? 'block' : 'none';
@@ -145,98 +146,109 @@
 
   function renderFeedCard(p) {
     const imgEl = p.image_url
-      ? `<img class="feed-card-img" src="${p.image_url}" alt="${p.title}" loading="lazy" style="position:relative">`
-      : `<div class="feed-card-img" style="background:${photoColor(p.id)}"></div>`;
-    return `
-      <div class="feed-card" onclick="openPhotoModal(${p.id})">
-        <div style="position:relative">
-          ${imgEl}
-          ${p.location ? `<div class="loc-badge"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>${p.location}</div>` : ''}
-        </div>
-        <div class="feed-card-body">
-          <div class="feed-card-title">${p.title}</div>
-          <div class="feed-card-caption">${p.caption || ''}</div>
-          <div class="feed-card-footer">
-            <div style="display:flex;align-items:center">
-              ${renderStars(p.avg_rating || 0)}
-              <span class="rating-count">${p.avg_rating ? p.avg_rating.toFixed(1) : '—'}</span>
-            </div>
-            <div class="comment-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>${p.comment_count || 0}</div>
-          </div>
-        </div>
-      </div>`;
+      ? '<img class="feed-card-img" src="' + p.image_url + '" alt="' + p.title + '" loading="lazy" style="position:relative">'
+      : '<div class="feed-card-img" style="background:' + photoColor(p.id) + '"></div>';
+    return '<div class="feed-card" onclick="openPhotoModal(' + p.id + ')">'
+      + '<div style="position:relative">'
+      + imgEl
+      + (p.location ? '<div class="loc-badge"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>' + p.location + '</div>' : '')
+      + '</div>'
+      + '<div class="feed-card-body">'
+      + '<div class="feed-card-title">' + p.title + '</div>'
+      + '<div class="feed-card-caption">' + (p.caption || '') + '</div>'
+      + '<div class="feed-card-footer">'
+      + '<div style="display:flex;align-items:center">'
+      + renderStars(p.avg_rating || 0)
+      + '<span class="rating-count">' + (p.avg_rating ? p.avg_rating.toFixed(1) : '&#8212;') + '</span>'
+      + '</div>'
+      + '<div class="comment-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>' + (p.comment_count || 0) + '</div>'
+      + '</div></div></div>';
   }
 
   async function openPhotoModal(id) {
-    currentPhotoId = id; userRating = 0;
-    resetRatingHover(); document.getElementById('comments-list').innerHTML = '<div class="spinner"></div>';
-    openModal('photo-modal');document.getElementById('rate-stars').innerHTML = (function(i){ return '<span class="rate-star" data-v="'+i+'" onclick="setRating('+i+')" style="font-size:24px;cursor:pointer;">★</span>'; }).join('');
+    currentPhotoId = id;
+    userRating = 0;
+    resetRatingHover();
+    document.getElementById('comments-list').innerHTML = '<div class="spinner"></div>';
+    openModal('photo-modal');
     try {
-      const data = await apiFetch(`/photos/${id}`);
+      const data = await apiFetch('/photos/' + id);
       const p = data.photo;
       document.getElementById('modal-photo-img').src = p.image_url || '';
       document.getElementById('modal-photo-img').style.background = photoColor(id);
       document.getElementById('modal-title').textContent = p.title;
-      document.getElementById('modal-meta').innerHTML = `
-        ${p.location ? `<span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>${p.location}</span>` : ''}
-        ${p.people ? `<span><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg>${p.people}</span>` : ''}
-        <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>${timeAgo(p.created_at)}</span>`;
+      document.getElementById('modal-meta').innerHTML =
+        (p.location ? '<span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>' + p.location + '</span>' : '')
+        + (p.people ? '<span><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg>' + p.people + '</span>' : '')
+        + '<span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>' + timeAgo(p.created_at) + '</span>';
       document.getElementById('modal-caption').textContent = p.caption || '';
       const allTags = [...(p.ai_tags || []), ...(p.tags || [])];
-      document.getElementById('modal-tags').innerHTML = allTags.map(t => `<span class="modal-tag">#${t}</span>`).join('');
+      document.getElementById('modal-tags').innerHTML = allTags.map(function(t) { return '<span class="modal-tag">#' + t + '</span>'; }).join('');
       await loadComments(id);
     } catch(e) { console.error(e); }
   }
 
   async function loadComments(id) {
     try {
-      const data = await apiFetch(`/photos/${id}/comments`);
+      const data = await apiFetch('/photos/' + id + '/comments');
       const list = document.getElementById('comments-list');
-      if (!(data.comments || []).length) { list.innerHTML = '<p style="font-size:13px;color:#a8a79f;text-align:center;padding:12px 0">No comments yet. Be the first!</p>'; return; }
-      list.innerHTML = data.comments.map(c => {
-        const initials = c.user_name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
-        return `<div class="comment-row">
-          <div class="avatar sm consumer">${initials}</div>
-          <div class="comment-content">
-            <div class="comment-user">${c.user_name}</div>
-            <div class="comment-text">${c.text}</div>
-            <div class="comment-time">${timeAgo(c.created_at)}</div>
-          </div>
-        </div>`;
+      if (!(data.comments || []).length) {
+        list.innerHTML = '<p style="font-size:13px;color:#a8a79f;text-align:center;padding:12px 0">No comments yet. Be the first!</p>';
+        return;
+      }
+      list.innerHTML = data.comments.map(function(c) {
+        const initials = c.user_name.split(' ').map(function(w){ return w[0]; }).join('').toUpperCase().slice(0,2);
+        return '<div class="comment-row">'
+          + '<div class="avatar sm consumer">' + initials + '</div>'
+          + '<div class="comment-content">'
+          + '<div class="comment-user">' + c.user_name + '</div>'
+          + '<div class="comment-text">' + c.text + '</div>'
+          + '<div class="comment-time">' + timeAgo(c.created_at) + '</div>'
+          + '</div></div>';
       }).join('');
     } catch(e) {}
   }
 
   async function postComment() {
     const input = document.getElementById('comment-input');
-    const text = input.value.trim(); if (!text) return;
+    const text = input.value.trim();
+    if (!text) return;
     try {
-      await apiFetch(`/photos/${currentPhotoId}/comments`, { method: 'POST', body: JSON.stringify({ text }) });
+      await apiFetch('/photos/' + currentPhotoId + '/comments', { method: 'POST', body: JSON.stringify({ text: text }) });
       input.value = '';
       await loadComments(currentPhotoId);
     } catch(e) { toast(e.message, 'error'); }
   }
 
-  function hoverRating(v) { document.querySelectorAll('.rate-star').forEach(s => s.classList.toggle('lit', +s.dataset.v <= v)); document.getElementById('rate-label').textContent = RATE_LABELS[v]; }
-  function resetRatingHover() { document.querySelectorAll('.rate-star').forEach(s => s.classList.toggle('lit', +s.dataset.v <= userRating)); document.getElementById('rate-label').textContent = userRating ? RATE_LABELS[userRating] : ''; }
+  function hoverRating(v) {
+    document.querySelectorAll('.rate-star').forEach(function(s) { s.classList.toggle('lit', +s.dataset.v <= v); });
+    document.getElementById('rate-label').textContent = RATE_LABELS[v];
+  }
+
+  function resetRatingHover() {
+    document.querySelectorAll('.rate-star').forEach(function(s) { s.classList.toggle('lit', +s.dataset.v <= userRating); });
+    document.getElementById('rate-label').textContent = userRating ? RATE_LABELS[userRating] : '';
+  }
+
   async function setRating(v) {
     userRating = v;
+    resetRatingHover();
     try {
-      await apiFetch(`/photos/${currentPhotoId}/rate`, { method: 'POST', body: JSON.stringify({ rating: v }) });
+      await apiFetch('/photos/' + currentPhotoId + '/rate', { method: 'POST', body: JSON.stringify({ rating: v }) });
       toast('Rating saved!');
     } catch(e) { toast(e.message, 'error'); }
   }
 
   function setFilter(f, el) {
     currentFilter = f;
-    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
     el.classList.add('active');
     loadFeed();
   }
 
   function debounceSearch() {
     clearTimeout(searchTimer);
-    searchTimer = setTimeout(() => { searchQuery = document.getElementById('search-input').value.trim(); loadFeed(); }, 350);
+    searchTimer = setTimeout(function() { searchQuery = document.getElementById('search-input').value.trim(); loadFeed(); }, 350);
   }
 
   function loadMore() { page++; loadFeed(false); }
@@ -244,27 +256,31 @@
   async function loadSidebar() {
     try {
       const [trending, creators] = await Promise.all([apiFetch('/photos?sort=rating&limit=3'), apiFetch('/creators')]);
-      document.getElementById('trending-list').innerHTML = (trending.photos || []).map(p => `
-        <div class="trending-item">
-          ${p.image_url ? `<img class="trending-thumb" src="${p.image_url}" alt="">` : `<div class="trending-thumb" style="background:${photoColor(p.id)}"></div>`}
-          <div class="trending-info"><div class="trending-title">${p.title}</div><div class="trending-by">by ${p.creator_name || 'creator'}</div></div>
-          <span class="hot-badge">${p.avg_rating >= 4.5 ? 'Hot' : 'New'}</span>
-        </div>`).join('') || '<p style="font-size:13px;color:#a8a79f">Nothing yet</p>';
+      document.getElementById('trending-list').innerHTML = (trending.photos || []).map(function(p) {
+        return '<div class="trending-item">'
+          + (p.image_url ? '<img class="trending-thumb" src="' + p.image_url + '" alt="">' : '<div class="trending-thumb" style="background:' + photoColor(p.id) + '"></div>')
+          + '<div class="trending-info"><div class="trending-title">' + p.title + '</div><div class="trending-by">by ' + (p.creator_name || 'creator') + '</div></div>'
+          + '<span class="hot-badge">' + (p.avg_rating >= 4.5 ? 'Hot' : 'New') + '</span>'
+          + '</div>';
+      }).join('') || '<p style="font-size:13px;color:#a8a79f">Nothing yet</p>';
 
-      document.getElementById('creators-list').innerHTML = (creators.creators || []).map(c => {
-        const initials = c.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
-        return `<div class="creator-item">
-          <div class="avatar sm creator">${initials}</div>
-          <div class="creator-item-info"><div class="creator-name">${c.name}</div><div class="creator-count">${c.photo_count} photos</div></div>
-          <button class="follow-btn" onclick="toggleFollow(this)">Follow</button>
-        </div>`;
+      document.getElementById('creators-list').innerHTML = (creators.creators || []).map(function(c) {
+        const initials = c.name.split(' ').map(function(w){ return w[0]; }).join('').toUpperCase().slice(0,2);
+        return '<div class="creator-item">'
+          + '<div class="avatar sm creator">' + initials + '</div>'
+          + '<div class="creator-item-info"><div class="creator-name">' + c.name + '</div><div class="creator-count">' + c.photo_count + ' photos</div></div>'
+          + '<button class="follow-btn" onclick="toggleFollow(this)">Follow</button>'
+          + '</div>';
       }).join('') || '<p style="font-size:13px;color:#a8a79f">No creators yet</p>';
     } catch(e) {}
   }
 
-  function toggleFollow(btn) { btn.classList.toggle('following'); btn.textContent = btn.classList.contains('following') ? 'Following' : 'Follow'; }
+  function toggleFollow(btn) {
+    btn.classList.toggle('following');
+    btn.textContent = btn.classList.contains('following') ? 'Following' : 'Follow';
+  }
 
-  document.getElementById('comment-input').addEventListener('keydown', e => { if (e.key === 'Enter') postComment(); });
+  document.getElementById('comment-input').addEventListener('keydown', function(e) { if (e.key === 'Enter') postComment(); });
 
   loadFeed();
   loadSidebar();
